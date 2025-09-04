@@ -1,0 +1,147 @@
+.home-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  .home-main-content {
+    flex: 1 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Barra superior home */
+.home-header {
+    background-color: #1e3d58; /* Cor do fundo da barra */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.home-header-content {
+    display: flex;
+    align-items: center;
+}
+
+.home-logo {
+    width: 250px; /* Tamanho logo*/
+    margin-right: 15px;
+}
+
+.home-h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.home-user-info {
+    display: flex;
+    align-items: center;
+}
+
+.home-user-photo {
+    margin-left: 1000px;
+    width: 60px; /* Ajuste o tamanho da foto */
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.home-user-info strong {
+    font-size: 20px;
+}
+
+/* Botões (para a home) */
+.home-section-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0;
+}
+
+.home-btn {
+    background-color: #0d6efd;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.home-btn:hover {
+    background-color: #004085;
+}
+
+/* Estilos para as seções (para a home) */
+.home-main-content {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.home-section {
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 70px;
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.home-h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.home-p {
+    font-size: 1rem;
+    color: #555;
+}
+
+footer {
+    background-color: #1e3d58;
+    border-top: 2px solid #63afff;
+}
+
+#sorvetePersonalizado{
+    margin-left: 200px;
+}
+
+/* Cardápio */
+#cardapio {
+    background-color: #fff;
+    border: 2px dashed #000;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    width: 30%;  /* Diminuir a largura da caixa */
+    margin: 20px auto;  /* Centralizar a caixa na página */
+    text-align: center;  /* Centralizar o texto */
+}
+
+/* Títulos do Cardápio */
+#cardapio h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#cardapio strong {
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Lista de itens no cardápio */
+#cardapio ul {
+    padding-left: 0;
+    list-style-type: none;
+    color: #000;
+    text-align: center;  /* Centralizar o texto da lista */
+}
+
+#cardapio li {
+    margin-bottom: 5px;
+    font-size: 1.1rem;  /* Ajuste no tamanho da fonte para melhor legibilidade */
+}

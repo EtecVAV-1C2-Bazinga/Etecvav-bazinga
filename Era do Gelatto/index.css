@@ -1,0 +1,43 @@
+/* Estilos para a Tela Inicial */
+.index-body, .index-html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Fundo da tela (para a tela inicial) */
+.index-fundo {
+    background-image: url('fundo\ gelo.png'); /* Imagem de fundo */
+    background-color: #9ac2d4;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos do subtítulo (para a tela inicial) */
+.index-subtitulo {
+    font-size: 1.5rem;
+    color: #000000;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
+/* Estilos dos botões (para a tela inicial) */
+.index-btn {
+    padding: 15px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border-radius: 30px;
+}
+
+/* Logo (para a tela inicial) */
+.index-logo {
+    max-width: 1000px;
+    margin-bottom: 30px;
+}
