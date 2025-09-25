@@ -88,3 +88,70 @@ void inicializarJogo() {
     // Mostra a quantidade de letras da palavra
     cout << "\n\nA palavra tem " << tamanhoPalavra << " caracteres (incluindo espacos)." << endl;
     
+  
+	// Loop principal do jogo (onde td acontece)
+    while(erros < 6 && letrasAcertadas < tamanhoPalavra) {
+        cout << "\n=========================" << endl;
+        
+        exibirForca(erros);
+        exibirPalavraOculta(palavraOculta, tamanhoPalavra);
+        exibirLetrasUsadas(letrasUsadas);
+        cout << "Erros: " << erros << "/6" << endl;
+        
+        cout << "\nDigite uma letra: ";
+        cin >> letra;
+        letra = toupper(letra);
+        
+        // Verificar se a letra já foi usada
+        bool jaUsada = false;
+        for(int i = 0; letrasUsadas[i]; i++) {
+            if(letrasUsadas[i] == letra) {
+                jaUsada = true;
+                break;
+            }
+        }
+        
+        if(jaUsada) {
+            cout << "Voce ja usou essa letra! Tente outra." << endl;
+            continue;
+        }
+        
+        // Adicionar letra para as letras usadas
+        int pos = strlen(letrasUsadas);
+        letrasUsadas[pos] = letra;
+        letrasUsadas[pos + 1] = '\0';
+        
+        // Verificar se a letra está na palavra sorteada
+        if(verificarLetra(letra, palavraSecreta, palavraOculta)) {
+            cout << "A letra '" << letra << "' esta na palavra!" << endl;
+            
+            // Contar quantas letras foram acertadas
+            letrasAcertadas = 0;
+            for(int i = 0; i < tamanhoPalavra; i++) {
+                if(palavraOculta[i] != '_') {
+                    letrasAcertadas++;
+                }
+            }
+        } 
+		// Mostra se a letra nao esta na palavra
+		else {
+            erros++;
+            cout << "A letra '" << letra << "' nao esta na palavra!" << endl;
+        }
+        
+        tentativas++;
+    }
+    
+    // Fim do jogo
+    cout << "\n=========================" << endl;
+    exibirForca(erros);
+    
+    if(erros == 6) {
+        cout << "\n\nVoce perdeu! A palavra era: " << palavraSecreta << endl;
+    } else {
+        cout << "\n\nParabens! Voce acertou a palavra: " << palavraSecreta << endl;
+    }
+    
+    cout << "Total de tentativas: " << tentativas << endl;
+}
+
