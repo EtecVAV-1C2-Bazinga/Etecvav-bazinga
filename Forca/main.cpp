@@ -49,3 +49,42 @@ int main() {
     
     return 0;
 }
+
+void inicializarJogo() {
+	// Variaveis char
+    char palavraSecreta[30];
+    char palavraOculta[30];
+    char letrasUsadas[27] = ""; // 26 letras + terminador nulo
+    
+    // Variaveis int (numeros)
+    int tentativas = 0;
+    int erros = 0;
+    int letrasAcertadas = 0;
+    char letra;
+    
+    
+    
+    
+    // Escolher palavra aleatória
+    int indice = rand() % 30;
+    strcpy(palavraSecreta, palavras[indice]);
+    int tamanhoPalavra = strlen(palavraSecreta);
+    
+    
+    
+    
+    
+    // Coloca a palavra "oculta" esconde ela
+    for(int i = 0; i < tamanhoPalavra; i++) {
+        if(palavraSecreta[i] == ' ') {
+            palavraOculta[i] = ' ';  // Mantém espaços visíveis
+            letrasAcertadas++;       // Conta espaços como já acertados
+        } else {
+            palavraOculta[i] = '_';
+        }
+    }
+    palavraOculta[tamanhoPalavra] = '\0';
+    
+    // Mostra a quantidade de letras da palavra
+    cout << "\n\nA palavra tem " << tamanhoPalavra << " caracteres (incluindo espacos)." << endl;
+    
