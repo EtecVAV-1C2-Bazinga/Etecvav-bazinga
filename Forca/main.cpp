@@ -155,3 +155,92 @@ void inicializarJogo() {
     cout << "Total de tentativas: " << tentativas << endl;
 }
 
+// Funcao da forca e erros (boneco)
+void exibirForca(int erros) {
+    cout << "\n  _______";
+    cout << "\n |      |";
+    
+    // Cabeça
+    if(erros >= 1) {
+        cout << "\n |      O";
+    } else {
+        cout << "\n |";
+    }
+    
+    // Tronco
+    if(erros == 2) {
+        cout << "\n |      |";
+    } else if(erros >= 3) {
+        cout << "\n |     /|\\";
+    } else {
+        cout << "\n |";
+    }
+    
+    // Pernas
+    if(erros == 4) {
+        cout << "\n |     /";
+    } else if(erros >= 5) {
+        cout << "\n |     / \\";
+    } else {
+        cout << "\n |";
+    }
+    
+    cout << "\n |";
+    cout << "\n_|_\n";
+}
+
+//Funcao de mostar a palavra
+void exibirPalavraOculta(const char* palavraOculta, int tamanho) {
+    cout << "\nPalavra: ";
+    for(int i = 0; i < tamanho; i++) {
+        cout << palavraOculta[i] << " ";
+    }
+    cout << endl;
+}
+
+// Funcao que mostra as letras usadas
+void exibirLetrasUsadas(const char* letrasUsadas) {
+    cout << "Letras usadas: ";
+    if(strlen(letrasUsadas) > 0) {
+        for(int i = 0; letrasUsadas[i]; i++) {
+            cout << letrasUsadas[i] << " ";
+        }
+    } else {
+        cout << "Nenhuma letra usada ainda";
+    }
+    cout << endl;
+}
+
+// Funcao de verificacao
+bool verificarLetra(char letra, const char* palavraSecreta, char* palavraOculta) {
+    bool acertou = false;
+    int tamanho = strlen(palavraSecreta);
+    
+    for(int i = 0; i < tamanho; i++) {
+        // Ignorar espaços durante a verificação
+        if(palavraSecreta[i] == ' ') {
+            continue;
+        }
+        
+        if(palavraSecreta[i] == letra) {
+            palavraOculta[i] = letra;
+            acertou = true;
+        }
+    }
+    
+    return acertou;
+}
+
+bool jogarNovamente() {
+    char resposta[5];
+    
+    cout << "\nQuer jogar novamente (s/n)? ";
+    cin >> resposta;
+    
+    // Converter para minúsculas para a resposta
+    for(int i = 0; resposta[i]; i++) {
+        resposta[i] = toupper(resposta[i]);
+    }
+    
+    return (strcmp(resposta, "S") == 0);
+}
