@@ -1,0 +1,9 @@
+def media(lista):
+    return sum(lista) / len(lista) if lista else 0
+
+r = "sim"
+while(r == "s" or r == "sim"): 
+    numeros = [float(x) for x in input("Digite os números separados por espaço: ").split()]
+    print(f"A média aritmética é: {media(numeros)}")
+
+    r = input("\nDeseja continuar (sim / nao): ")
